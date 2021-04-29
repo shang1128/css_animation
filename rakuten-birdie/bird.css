@@ -146,7 +146,7 @@ a {
    .globe .bird .body:before {
     left: 0;
     animation-name:wings-shake-left;
-    animation-duration: 0.5s;
+    animation-duration: .05s;
     animation-timing-function: cubic-bezier(0.61, 0.54, 0.79, 1.36);
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -155,7 +155,7 @@ a {
    .globe .bird .body:after { 
        right: 0;
        animation-name:wings-shake-right;
-       animation-duration: 0.5s;
+       animation-duration: .05s;
        animation-timing-function: cubic-bezier(0.61, 0.54, 0.79, 1.36);
        animation-iteration-count: infinite;
        animation-direction: alternate-reverse;
@@ -323,6 +323,9 @@ a {
     border-radius: 20px;
     top: -20px;
     z-index: -1;
+    animation-name: clouds-move;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
    }
    .globe .cloud.small {
     top: -50px;
@@ -342,6 +345,7 @@ a {
     top: -18px;
     right: 10px;
     border-radius: 40px;
+    animation-name:cloud
    }
    .globe .cloud:after {
     width: 20px;
@@ -457,27 +461,35 @@ a {
      }
      @keyframes feet-move-left{
         0%{
-            /* left: 40px; */
-            /* top: -6px; */
+           
             transform: rotateX(45deg);
 
         }
         100%{
-            /* left: 40px; */
-            /* top: 0; */
+            
             transform: rotateX(20deg);
         }
      }
      @keyframes feet-move-right{
         0%{
-            /* right: 40px; */
-            /* top: -6px; */
+            
             transform: rotateX(45deg);
 
         }
         100%{
-            /* right: 40px; */
-            /* top: 0; */
+           
             transform: rotateX(20deg);
         }
+     }
+   
+     @keyframes clouds-move{
+        0%{
+           left: -160px;
+
+        }
+        100%{
+            left: 250px;
+        }
+      
+      
      }
