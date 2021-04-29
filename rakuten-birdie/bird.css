@@ -146,12 +146,20 @@ a {
    .globe .bird .body:before {
     left: 0;
     animation-name:wings-shake-left;
-    animation-duration: 1s;
-    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.61, 0.54, 0.79, 1.36);
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     
    }
-   .globe .bird .body:after { right: 0;
+   .globe .bird .body:after { 
+       right: 0;
+       animation-name:wings-shake-right;
+       animation-duration: 0.5s;
+       animation-timing-function: cubic-bezier(0.61, 0.54, 0.79, 1.36);
+       animation-iteration-count: infinite;
+       animation-direction: alternate-reverse;
+
    }
    .globe .bird .body .eye {
     position: absolute;
@@ -197,6 +205,7 @@ a {
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
    }
    .globe .bird .body .eye.right {
     right: 15px;
@@ -211,6 +220,7 @@ a {
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
    }
    .globe .bird .body .beak {
     position: absolute;
@@ -285,9 +295,20 @@ a {
    }
    .globe .bird .body .feet:before {
     left: 40px;
+    animation-name:feet-move-left ;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
    }
    .globe .bird .body .feet:after {
     right: 40px;
+    animation-name:feet-move-right ;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
    }
 
    /* Clouds and sky */
@@ -420,20 +441,43 @@ a {
         0%{
             left: 0px;
         }
-        20%{
-            left: -2px;
-            transform: rotate(90deg);
-        }
-        40%{
-            left: -3px;
-            transform: rotate(90deg);
-        }
-        80%{
-            left: -4px;
-            transform: rotate(90deg);
-        }
         100%{
             left: -5px;
-            transform: rotate(90deg);
+            transform: rotate(60deg);
         }
+     }
+     @keyframes wings-shake-right{
+        0%{
+            right: 0px;
         }
+        100%{
+            right: 5px;
+            transform: rotate(-60deg);
+        }
+     }
+     @keyframes feet-move-left{
+        0%{
+            /* left: 40px; */
+            /* top: -6px; */
+            transform: rotateX(45deg);
+
+        }
+        100%{
+            /* left: 40px; */
+            /* top: 0; */
+            transform: rotateX(20deg);
+        }
+     }
+     @keyframes feet-move-right{
+        0%{
+            /* right: 40px; */
+            /* top: -6px; */
+            transform: rotateX(45deg);
+
+        }
+        100%{
+            /* right: 40px; */
+            /* top: 0; */
+            transform: rotateX(20deg);
+        }
+     }
